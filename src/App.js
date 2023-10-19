@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/*import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -22,4 +22,41 @@ function App() {
   );
 }
 
-export default App;
+export default App;*/
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import React from "react"
+import Login from './components/Login.js';
+import MapContainer from './components/Map.js';
+const client = require('./config/database');
+
+// Agora use o 'client' para fazer suas queries
+
+
+class App extends React.Component {
+  state = {
+    name: ""
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:3000")
+      .then(res => res.json())
+      .then(data => this.setState({ name: data.name }))
+  }
+
+  render() {
+    return (
+    <Router>
+      <Routes>
+      <Route path="/map" element={<MapContainer />} />
+      <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
+    /*return (
+      <h1>Hello {this.state.name}!</h1>
+    )*/
+  }
+}
+
+export default App
