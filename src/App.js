@@ -28,7 +28,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React from "react"
 import Login from './components/Login.js';
 import MapContainer from './components/Map.js';
-const client = require('./config/database');
+import Register from './components/Register.js'
+
 
 // Agora use o 'client' para fazer suas queries
 
@@ -38,11 +39,11 @@ class App extends React.Component {
     name: ""
   }
 
-  componentDidMount() {
-    fetch("http://localhost:3000")
-      .then(res => res.json())
-      .then(data => this.setState({ name: data.name }))
-  }
+  // componentDidMount() {
+  //   fetch("http://localhost:3000")
+  //     .then(res => res.json())
+  //     .then(data => this.setState({ name: data.name }))
+  // }
 
   render() {
     return (
@@ -50,6 +51,7 @@ class App extends React.Component {
       <Routes>
       <Route path="/map" element={<MapContainer />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );
