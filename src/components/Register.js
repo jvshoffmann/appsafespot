@@ -12,7 +12,7 @@ function Register() {
     e.preventDefault();
     
     // Aqui você fará a chamada para o back-end para registrar o usuário
-    const response = await fetch('/api/register', {
+    const response = await fetch('http://localhost:3000/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
