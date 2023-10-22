@@ -23,6 +23,7 @@ function Register() {
     });
 
     const data = await response.json();
+    localStorage.setItem('token', data.token);
     if (data.success) {
         navigate('/map');
     } else {
