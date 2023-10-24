@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+
+{
+  "dependencies": {
+    "create-react-app": "^5.0.1"
+  }
+  
+=======
 {
   "name": "client",
   "version": "0.1.0",
@@ -39,4 +47,5 @@
       "last 1 safari version"
     ]
   }
+>>>>>>> e4daff6b189ebd8c9376919a5b1c2755555a43d8
 }
